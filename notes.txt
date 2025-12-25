@@ -1,0 +1,79 @@
+superuser :
+arch
+pass:12345
+
+
+steps
+react register steps
+ 1. pip install django-cors-headers and update settings - middleware
+ 2. install react using vite (build tool)
+3. also mention the react server ip in settings
+ (geeksforgeek)
+    npm create vite@latest my-react-app -- --template react
+    cd my-react-app and npm install
+    npm run dev
+
+    select js+react
+
+
+# sample json for rider register api
+{
+"username": "laxmi",
+"email": "laxmi@gmail.com",
+"phone": +91784665823,
+"password":"12345",
+"payment_method": "cash",
+"default_pick": "Bhopal"
+
+}
+
+
+# designing register ui
+
+check your fields as per api
+install axios ---npm install axios in project folder (my-react-app), it will be added to package .json check it
+
+import axios in the js file
+
+now from UI you can register..
+
+## login api##
+
+1 install djangoframework-simplejwt
+
+2  add to settings
+
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    )
+}
+
+# for login ui
+install react-router-dom in react folder my-react-app
+
+
+
+
+
+***********************
+to create rides app inside apps
+apps/
+.....accounts
+.....rides
+1 so first create the directory inside apps
+ then run command python manage.py startapp rides apps\rides
+
+2. go to apps.py update the name as 'apps.rides'
+3. update the settings installed app-> 'apps.rides'
+
+
+#django command create_drivers
+make a folder in any app here 
+rides/management/commands-> create_drivers.py
+to run from the root folder -> python manage.py create_drivers
+
+# for moving driverlocations model to geodjango db***********
+install these:
+1. use django.contrib.gis package for geomodels
+2.
